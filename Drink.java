@@ -5,7 +5,6 @@ public class Drink {
 	private int ice;
 	private double sugar;
 	private double syrup;
-	private double newsugar;
 	private int water;
 	private int toppings;
 	
@@ -50,7 +49,7 @@ public class Drink {
 		return sugar;
 	}
 	public void setSugar(double sugar) {
-		this.newsugar = newsugar;
+		this.sugar = sugar;
 	}
 	public double getSyrup() {
 		return syrup;
@@ -73,8 +72,13 @@ public class Drink {
 		this.toppings = toppings;	
 	}
 	
+	public String displayAnswer() {
+		return this.size + " " + this.name + " with " + this.toppings + " toppings, " + this.sugar + " oz of sugar, a " + this.shaker + "cc shaker, " +  this.syrup + " oz of syrup, and " + this.water + "cc of water\n"; 
+	}
+	
+	
 	public boolean equals(Drink other) {
-		if(this.name == other.name && this.sugar == other.sugar && this.shaker == other.shaker) {
+		if(this.name == other.name && this.sugar <= other.sugar) {
 			return true;
 		} else {
 			return false;
@@ -82,7 +86,7 @@ public class Drink {
 	}
 
 	public String toString() {
-		return this.shaker + this.size + " " + this.name + " with " + this.sugar + "sugar(s) and " + this.toppings + " toppings.";
+		return this.size + " " + this.name + " with " + this.toppings + " toppings. ";
 	}
 	
 	
