@@ -6,11 +6,11 @@ public class Game {
 	public static final Random rand = new Random();
 	
 	public static final double[] sugarlevels = 
-		{0, .2, .25, .4, .6, .8, 1.0, 1.2, 1.5, 1.8, 2.0, 2.5, 3.0}; 
-		//0, 1,  2,   3,  4,  5,   6,   7,   8,   9,  10,  11,  12
+		{0, .2, .25, .4, .6, .8, 1.0, 1.2, 1.5, 1.8, 2.0, 2.5, 3.0, 3.5}; 
+		//0, 1,  2,   3,  4,  5,   6,   7,   8,   9,  10,  11,  12   13
 	
 	public static Drink[] fillDrinks() {
-		Drink[] list = {
+		Drink[] list = { //list.length = 23 *bound to change*
 				new Drink("Tea Bar MT", "Regular", 500, sugarlevels[6], 0, 0), 
 				new Drink("Tea Bar MT", "Regular", 700, sugarlevels[7], 0, 0), 
 				new Drink("Tea Bar MT", "Large", 1000, sugarlevels[9], 0, 0),
@@ -28,9 +28,12 @@ public class Game {
 				new Drink("Mango GT", "Large", 1000, sugarlevels[9], 2.0, 0), 
 				new Drink("Kumquat GT", "Regular", 500, sugarlevels[6], 1.2, 100), 
 				new Drink("Kumquat GT", "Regular", 700, sugarlevels[7], 1.5, 100), 
-				new Drink("Kumquat GT", "Large", 1000, sugarlevels[10], 1.8, 100),
+				new Drink("Kumquat GT", "Large", 1000, sugarlevels[9], 2.0, 100),
 				new Drink("G J Roasted MT", "Regular", 500, sugarlevels[7], 0, 0), 
-				new Drink("G J Roasted MT", "Large", 1000, sugarlevels[8], 0, 0), 
+				new Drink("G J Roasted MT", "Large", 1000, sugarlevels[8], 0, 0),
+				new Weird("Taro MT", "Regular", 700, sugarlevels[8], 0, 250, 3, 3, 0, "taro"),
+				new Weird("Matcha Smoothie", "Regular", 700, sugarlevels[11], 0, 125, .75, 4, 1200 ,"matcha"),
+				new Weird("Matcha Smoothie", "Large", 1000, sugarlevels[13], 0, 175, 1, 6, 1500 ,"matcha")
 		};
       return list;
 	}
@@ -59,7 +62,7 @@ public class Game {
 			Drink[] list = fillDrinks();
 			Drink customer = new Drink();
 			do {
-				customer = list[rand.nextInt(20)];
+				customer = list[rand.nextInt(23)];
 			} while(customer.getShaker() == 500);
 			
 			customer.setToppings(rand.nextInt(3));
@@ -71,6 +74,11 @@ public class Game {
 			total += sugarQuestion(answer);
 			total += syrupQuestion(answer);
 			total += waterQuestion(answer);
+			if(answer.getName() == "Taro MT" || answer.getName() == "Matcha Smoothie") {
+				total += answer.toppingQuestion();
+				total += answer.creamerQuestion();
+				total += answer.iceQuestion();
+			}
 			System.out.println("\nAnswer: " + answer.displayAnswer());
 			displayDashes();
 			System.out.println();
@@ -116,7 +124,7 @@ public class Game {
 	}
 	public static int shakerQuestion(Drink drink) {
 		System.out.println("What shaker do you use?");
-		int answer = input.nextInt();
+		double answer = input.nextDouble();
 		if(answer == drink.getShaker()) {
 			System.out.println("Correct!");
 			return 1;
