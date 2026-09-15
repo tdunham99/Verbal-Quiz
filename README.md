@@ -16,11 +16,11 @@ In order to help me memorize the many recipes for milk teas that customers could
 
 1. You will be prompted a list of drinks that will be on the quiz (MT = Milk Tea, GT = Green Tea):
 
->  1. Grass Jelly Roasted MT   2. Roasted MT   3. Tea Bar MT   4. Mango GT   5. Kumquat GT   6. Jasmine MT   7. Oolong MT
+>  1. Grass Jelly Roasted MT   2. Roasted MT   3. Tea Bar MT   4. Mango GT   5. Kumquat GT   6. Jasmine MT   7. Oolong MT, 8. Taro MT, 9. Matcha Smoothie
 
 _The "orders" can either come in Regular or Large size, which affects how much sugar, water, syrup, and shaker size to use._
 
-2. The program randomizes these orders for a total of seven questions, each answer is tallied towards the final score at the end of the quiz.
+2. The program randomizes these orders for a total of nine questions, each answer is tallied towards the final score at the end of the quiz.
 
 3. In each question the user has to provide the amount of sugar, shaker size, amount of flavored syrup, and amount of water to use. 
 
