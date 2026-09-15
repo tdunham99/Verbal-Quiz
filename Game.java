@@ -32,8 +32,8 @@ public class Game {
 				new Drink("G J Roasted MT", "Regular", 500, sugarlevels[7], 0, 0), 
 				new Drink("G J Roasted MT", "Large", 1000, sugarlevels[8], 0, 0),
 				new Weird("Taro MT", "Regular", 700, sugarlevels[8], 0, 250, 3, 3, 0, "taro"),
-				new Weird("Matcha Smoothie", "Regular", 700, sugarlevels[11], 0, 125, .75, 4, 1200 ,"matcha"),
-				new Weird("Matcha Smoothie", "Large", 1000, sugarlevels[13], 0, 175, 1, 6, 1500 ,"matcha")
+				new Weird("Matcha Smoothie", "Regular", 700, sugarlevels[11], 0, 125, .75, 4, 1200 , "matcha"),
+				new Weird("Matcha Smoothie", "Large", 1000, sugarlevels[13], 0, 175, 1, 6, 1500 , "matcha")
 		};
       return list;
 	}
@@ -44,7 +44,7 @@ public class Game {
 		System.out.println("\n  Welcome to Cool Tea Bar's\n       Verbal Quiz!");
 		displayDashes();
 		System.out.println("\nDrinks on the test:");
-		System.out.println("   1. G J Roasted MT\n   2. Roasted MT\n   3. Tea Bar MT\n   4. Mango GT\n   5. Kumquat GT\n   6. Jasmine MT\n   7. Oolong MT");
+		System.out.println("   1. Grass Jelly Roasted MT\n   2. Roasted MT\n   3. Tea Bar MT\n   4. Mango GT\n   5. Kumquat GT\n   6. Jasmine MT\n   7. Oolong MT, 8. Taro MT, 9. Matcha Smoothie");
 		displayDashes();
 		System.out.println();
 	}
