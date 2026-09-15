@@ -44,7 +44,7 @@ public class Game {
 		System.out.println("\n  Welcome to Cool Tea Bar's\n       Verbal Quiz!");
 		displayDashes();
 		System.out.println("\nDrinks on the test:");
-		System.out.println("   1. Grass Jelly Roasted MT\n   2. Roasted MT\n   3. Tea Bar MT\n   4. Mango GT\n   5. Kumquat GT\n   6. Jasmine MT\n   7. Oolong MT, 8. Taro MT, 9. Matcha Smoothie");
+		System.out.println("   1. Grass Jelly Roasted MT\n   2. Roasted MT\n   3. Tea Bar MT\n   4. Mango GT\n   5. Kumquat GT\n   6. Jasmine MT\n   7. Oolong MT\n  8. Taro MT\n  9. Matcha Smoothie");
 		displayDashes();
 		System.out.println();
 	}
